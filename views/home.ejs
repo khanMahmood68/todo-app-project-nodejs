@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>todoList</title>
+    
+    <script src="https://kit.fontawesome.com/349b9c63f9.js" crossorigin="anonymous"></script>
+    <link rel ="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class = "heading">
+        <h1>TODO List</h1>
+    </div>
+    <div class="form">
+        <form action="/create_todo" method="POST">
+        <div class="desc_Class">
+            <input id="task" type="textarea" required name="desc" placeholder="Task"> 
+        </div>
+        <div class="select_and_input">
+            <select name="category" required>
+                <option value="" disabled selected>Catagory of Task</option>
+                <option>Personal</option>
+                <option>Professional</option>
+                <option>Household Chores</option>
+                <option>Otheres</option>
+            </select>
+            <input class="datesValues" type="date" name="dueDate"  required>
+        </div>
+            <button class="buttonDesign colorGrey" type="submit"><i class="fa-solid fa-plus"></i> Add Task</button>
+            <!-- <button class="buttonDesign colorRed" id="deleteButton" type="submit"><i class="fa-solid fa-trash"></i> Delete Task</button> -->
+  
+        </form>
+             
+    </div>
+    <div>
+        <ul>
+               
+            <% for (let i of todoList) { %> 
+               <div class="todo"> 
+                    <li>
+                        <p><%= i.desc %></p>
+                        <p><%= i.category %></p>
+                        <p><%= i.date %></p>
+                    </li>
+                </div>
+                
+                <div class="delete-button">
+                    <a href="/delete-contact/?id=<%= i._id %>">
+                        <button class="buttonDesign colorRed" type="submit"><i class="fa-solid fa-trash"></i> Delete Task</button>
+                        
+                    </a>
+                </div>
+            
+            <% } %>
+        </ul>
+    </div>
+
+    
+</body>
+</html>

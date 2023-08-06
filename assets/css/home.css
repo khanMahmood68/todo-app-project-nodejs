@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(21, 212, 212);
+}
+.heading{
+    text-align: center;
+}
+.form{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    
+   
+}
+ #task{
+    height: 25px;
+    width:90%
+    
+    
+ }
+ .select_and_input{
+    margin-top: 7px;
+    
+    
+ 
+ }
